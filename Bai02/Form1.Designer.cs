@@ -32,23 +32,21 @@ namespace Bai02
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label_giamgia = new System.Windows.Forms.Label();
             this.label_treem = new System.Windows.Forms.Label();
             this.label_nu = new System.Windows.Forms.Label();
-            this.label_thinhhanh = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_nam = new System.Windows.Forms.Label();
+            this.label_all = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,27 +62,17 @@ namespace Bai02
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(910, 93);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(837, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(797, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(44, 54);
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label1
             // 
@@ -98,6 +86,7 @@ namespace Bai02
             this.label1.TabIndex = 10;
             this.label1.Text = "Tìm kiếm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // richTextBox2
             // 
@@ -108,65 +97,60 @@ namespace Bai02
             this.richTextBox2.Size = new System.Drawing.Size(416, 28);
             this.richTextBox2.TabIndex = 11;
             this.richTextBox2.Text = "Bạn cần tìm gì hôm nay?";
-            // 
-            // label_giamgia
-            // 
-            this.label_giamgia.AutoSize = true;
-            this.label_giamgia.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.label_giamgia.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_giamgia.Location = new System.Drawing.Point(507, 62);
-            this.label_giamgia.Name = "label_giamgia";
-            this.label_giamgia.Size = new System.Drawing.Size(81, 21);
-            this.label_giamgia.TabIndex = 3;
-            this.label_giamgia.Text = "Giảm giá";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // label_treem
             // 
             this.label_treem.AutoSize = true;
-            this.label_treem.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.label_treem.BackColor = System.Drawing.Color.Transparent;
             this.label_treem.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_treem.Location = new System.Drawing.Point(420, 60);
+            this.label_treem.Location = new System.Drawing.Point(433, 60);
             this.label_treem.Name = "label_treem";
             this.label_treem.Size = new System.Drawing.Size(64, 21);
             this.label_treem.TabIndex = 2;
             this.label_treem.Text = "Trẻ em";
+            this.label_treem.Click += new System.EventHandler(this.label_treem_Click);
             // 
             // label_nu
             // 
             this.label_nu.AutoSize = true;
-            this.label_nu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.label_nu.BackColor = System.Drawing.Color.Transparent;
             this.label_nu.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_nu.Location = new System.Drawing.Point(351, 60);
+            this.label_nu.Location = new System.Drawing.Point(364, 60);
             this.label_nu.Name = "label_nu";
             this.label_nu.Size = new System.Drawing.Size(35, 21);
             this.label_nu.TabIndex = 1;
             this.label_nu.Text = "Nữ";
+            this.label_nu.Click += new System.EventHandler(this.label_nu_Click);
             // 
-            // label_thinhhanh
+            // label_nam
             // 
-            this.label_thinhhanh.AutoSize = true;
-            this.label_thinhhanh.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.label_thinhhanh.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_thinhhanh.Location = new System.Drawing.Point(270, 60);
-            this.label_thinhhanh.Name = "label_thinhhanh";
-            this.label_thinhhanh.Size = new System.Drawing.Size(47, 21);
-            this.label_thinhhanh.TabIndex = 0;
-            this.label_thinhhanh.Text = "Nam";
+            this.label_nam.AutoSize = true;
+            this.label_nam.BackColor = System.Drawing.Color.Transparent;
+            this.label_nam.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nam.Location = new System.Drawing.Point(283, 60);
+            this.label_nam.Name = "label_nam";
+            this.label_nam.Size = new System.Drawing.Size(47, 21);
+            this.label_nam.TabIndex = 0;
+            this.label_nam.Text = "Nam";
+            this.label_nam.Click += new System.EventHandler(this.label_thinhhanh_Click);
             // 
-            // label2
+            // label_all
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.label2.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(185, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 21);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Tất cả";
+            this.label_all.AutoSize = true;
+            this.label_all.BackColor = System.Drawing.Color.Transparent;
+            this.label_all.Font = new System.Drawing.Font("Constantia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_all.ForeColor = System.Drawing.Color.Red;
+            this.label_all.Location = new System.Drawing.Point(198, 60);
+            this.label_all.Name = "label_all";
+            this.label_all.Size = new System.Drawing.Size(59, 21);
+            this.label_all.TabIndex = 12;
+            this.label_all.Text = "Tất cả";
+            this.label_all.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Maroon;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.checkBox3);
@@ -174,7 +158,7 @@ namespace Bai02
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(3, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(133, 465);
+            this.groupBox1.Size = new System.Drawing.Size(133, 220);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -233,26 +217,34 @@ namespace Bai02
             this.checkBox1.Text = "Lifestyle";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(142, 99);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(758, 441);
+            this.flowLayoutPanel1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(912, 543);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_all);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label_giamgia);
             this.Controls.Add(this.label_treem);
             this.Controls.Add(this.label_nu);
-            this.Controls.Add(this.label_thinhhanh);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label_nam);
             this.Name = "Form1";
             this.Text = "0";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -263,21 +255,20 @@ namespace Bai02
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private RichTextBox richTextBox2;
-        private Label label_giamgia;
         private Label label_treem;
         private Label label_nu;
-        private Label label_thinhhanh;
-        private Label label2;
+        private Label label_nam;
+        private Label label_all;
         private GroupBox groupBox1;
         private CheckBox checkBox5;
         private CheckBox checkBox4;
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
