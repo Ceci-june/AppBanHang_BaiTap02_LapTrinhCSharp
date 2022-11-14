@@ -22,7 +22,7 @@ namespace Bai02.Custom
             pictureBox1.Image = (Image)Bai02.Properties.Resources.ResourceManager.GetObject(id);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             labelName.Text = name;
-            labelPrice.Text = price + "VNĐ";
+            labelPrice.Text = price + "đ";
             pictureBox1.Name = id;
         }
 

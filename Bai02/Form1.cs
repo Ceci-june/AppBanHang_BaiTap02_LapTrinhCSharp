@@ -115,7 +115,8 @@ namespace Bai02
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            //cart
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)

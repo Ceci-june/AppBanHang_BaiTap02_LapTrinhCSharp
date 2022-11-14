@@ -15,6 +15,7 @@ namespace Bai02
     public partial class Form2 : Form
     {
         private static DataRow dr;
+        private static string size="";
         public Form2()
         {
             InitializeComponent();
@@ -34,10 +35,25 @@ namespace Bai02
             foreach (Control ctrl in tableLayoutPanel2.Controls)
             {
                 ctrl.Click += new EventHandler(pictureBoxSmall_Click);
-            }    
+            }
+            foreach (Control ctrl in tableLayoutPanel1.Controls)
+            {
+                ctrl.Click += new EventHandler(pictureBoxSize_Click);
+            }
+            this.pictureBox1.Focus();
             //pictureBox1.BackColor = Color.Blue;
         }
+        private void pictureBoxSize_Click(object sender, EventArgs e)
+        {
+            Button chosen = (Button)sender;
+            foreach (Control ctrl in tableLayoutPanel1.Controls)
+            {
+                ctrl.BackColor = Color.White;
+            }
+            chosen.BackColor = Color.Blue;
+            size = chosen.Text;
 
+        }
         private void pictureBoxSmall_Click(object sender, EventArgs e)
         {
             Button chosen = (Button)sender;
@@ -61,6 +77,7 @@ namespace Bai02
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Form1.cart.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), dr["describe"].ToString(), dr["gender"].ToString(), dr["type"].ToString(), Convert.ToInt32(dr["price"]));
             MessageBox.Show("Đã thêm sản phẩm vào giỏ hàng.");
         }
