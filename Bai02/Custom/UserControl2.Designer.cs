@@ -1,4 +1,6 @@
-﻿namespace Bai02.Custom
+﻿using System.Windows.Forms;
+
+namespace Bai02.Custom
 {
     partial class UserControl2
     {
@@ -34,9 +36,9 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelDelete = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label_tong = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +72,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // labelPrice
             // 
@@ -90,6 +93,7 @@
             this.labelName.Size = new System.Drawing.Size(221, 69);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "giày siêu đẹp";
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // labelDelete
             // 
@@ -101,6 +105,7 @@
             this.labelDelete.Size = new System.Drawing.Size(38, 20);
             this.labelDelete.TabIndex = 8;
             this.labelDelete.Text = "Xóa";
+            this.labelDelete.Click += new System.EventHandler(this.labelDelete_Click);
             // 
             // labelSize
             // 
@@ -111,14 +116,6 @@
             this.labelSize.Size = new System.Drawing.Size(47, 20);
             this.labelSize.TabIndex = 10;
             this.labelSize.Text = "Size:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(61, 24);
-            this.comboBox1.TabIndex = 11;
             // 
             // label2
             // 
@@ -134,21 +131,31 @@
             // 
             this.label_tong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label_tong.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tong.Location = new System.Drawing.Point(417, 78);
+            this.label_tong.Location = new System.Drawing.Point(417, 80);
             this.label_tong.Name = "label_tong";
             this.label_tong.Size = new System.Drawing.Size(91, 24);
             this.label_tong.TabIndex = 13;
             this.label_tong.Text = "5.000.000đ";
             this.label_tong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(208, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Size:";
+            // 
             // UserControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_tong);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelSize);
             this.Controls.Add(this.labelDelete);
             this.Controls.Add(this.labelName);
@@ -157,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "UserControl2";
             this.Size = new System.Drawing.Size(532, 115);
+            this.Load += new System.EventHandler(this.UserControl2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -172,8 +180,8 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelDelete;
         private System.Windows.Forms.Label labelSize;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_tong;
+        private Label label1;
     }
 }

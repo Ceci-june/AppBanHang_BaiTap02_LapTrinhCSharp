@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 //using static System.Net.Mime.MediaTypeNames;
 
@@ -16,6 +17,7 @@ namespace Bai02
     {
         private static DataRow dr;
         private static string size="";
+        private static DataTable dt = Form1.cart;
         public Form2()
         {
             InitializeComponent();
@@ -32,6 +34,14 @@ namespace Bai02
             button_01.BackgroundImageLayout = ImageLayout.Stretch;
             button_02.BackgroundImageLayout = ImageLayout.Stretch;
             label5.Text = dr["describe"].ToString();
+            if(dr["gender"].ToString()=="men")
+            {
+                button6.Text = "40";
+                button5.Text = "41";
+                button4.Text = "42";
+                button3.Text = "43";
+                button2.Text = "44";
+            }    
             foreach (Control ctrl in tableLayoutPanel2.Controls)
             {
                 ctrl.Click += new EventHandler(pictureBoxSmall_Click);
@@ -40,7 +50,8 @@ namespace Bai02
             {
                 ctrl.Click += new EventHandler(pictureBoxSize_Click);
             }
-            this.pictureBox1.Focus();
+
+            //this.pictureBox1.Focus();
             //pictureBox1.BackColor = Color.Blue;
         }
         private void pictureBoxSize_Click(object sender, EventArgs e)
@@ -77,9 +88,26 @@ namespace Bai02
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Form1.cart.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), dr["describe"].ToString(), dr["gender"].ToString(), dr["type"].ToString(), Convert.ToInt32(dr["price"]));
-            MessageBox.Show("Đã thêm sản phẩm vào giỏ hàng.");
+            if (size!="")
+            {
+                
+                DataRow find = Form1.cart.AsEnumerable().SingleOrDefault(r => r.Field<string>("id") == dr["id"].ToString() && r.Field<string>("size") == size);
+               
+                if (find == null)
+                {
+                    Form1.cart.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), size, 1, Convert.ToInt32(dr["price"]));
+                }    
+                else
+                {
+                    int index = Form1.cart.Rows.IndexOf(find);
+                    Form1.cart.Rows[index]["number"] = Convert.ToInt32(Form1.cart.Rows[index]["number"]) + 1;
+                }    
+                MessageBox.Show("Đã thêm sản phẩm vào giỏ hàng.");
+            }    
+            else
+            {
+                MessageBox.Show("Xin hãy chọn size.");
+            }    
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -90,8 +118,36 @@ namespace Bai02
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form1.love.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), dr["describe"].ToString(), dr["gender"].ToString(), dr["type"].ToString(), Convert.ToInt32(dr["price"]));
+            DataRow find = Form1.cart.AsEnumerable().SingleOrDefault(r => r.Field<string>("id") == dr["id"].ToString());
+            if (find == null)
+            {
+                Form1.love.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), dr["describe"].ToString(), dr["gender"].ToString(), dr["type"].ToString(), Convert.ToInt32(dr["price"])); 
+            }
             MessageBox.Show("Đã thêm sản phẩm vào yêu thích.");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (size != "")
+            {
+                DataRow find = Form1.cart.AsEnumerable().SingleOrDefault(r => r.Field<string>("id") == dr["id"].ToString() && r.Field<string>("size") == size);
+                if (find == null)
+                {
+                    Form1.cart.Rows.Add(dr["id"].ToString(), dr["name"].ToString(), size, 1, Convert.ToInt32(dr["price"]));
+                }
+                else
+                {
+                    int index = Form1.cart.Rows.IndexOf(find);
+                    Form1.cart.Rows[index]["number"] = Convert.ToInt32(Form1.cart.Rows[index]["number"]) + 1;
+                }
+                Form3 form3 = new Form3();
+                form3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Xin hãy chọn size.");
+            }
+            
         }
     }
 }

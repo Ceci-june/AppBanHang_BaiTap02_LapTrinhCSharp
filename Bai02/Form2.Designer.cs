@@ -48,6 +48,7 @@
             this.button_02 = new System.Windows.Forms.Button();
             this.button_01 = new System.Windows.Forms.Button();
             this.button_00 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button7);
@@ -117,9 +119,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 323);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 24);
+            this.label4.Size = new System.Drawing.Size(169, 24);
             this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
+            this.label4.Text = "Miêu tả sản phẩm";
             // 
             // button7
             // 
@@ -128,7 +130,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(322, 48);
             this.button7.TabIndex = 12;
-            this.button7.Text = "Thêm vào giỏ hàng";
+            this.button7.Text = "Thêm vào yêu thích";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -145,7 +147,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button6, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 132);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(63, 132);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -214,16 +216,16 @@
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(8, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 24);
+            this.label3.Size = new System.Drawing.Size(156, 24);
             this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.label3.Text = "Chọn kích thước:";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(43, 208);
+            this.button1.Location = new System.Drawing.Point(43, 193);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(322, 48);
+            this.button1.Size = new System.Drawing.Size(158, 63);
             this.button1.TabIndex = 11;
             this.button1.Text = "Thêm vào giỏ hàng";
             this.button1.UseVisualStyleBackColor = true;
@@ -285,6 +287,17 @@
             this.button_00.TabIndex = 15;
             this.button_00.UseVisualStyleBackColor = true;
             // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(207, 193);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(158, 63);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "Mua ngay";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,5 +343,6 @@
         private System.Windows.Forms.Button button_00;
         private System.Windows.Forms.Button button_02;
         private System.Windows.Forms.Button button_01;
+        private System.Windows.Forms.Button button8;
     }
 }
